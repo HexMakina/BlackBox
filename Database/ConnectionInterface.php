@@ -4,7 +4,7 @@ namespace HexMakina\Interfaces\Database;
 
 interface ConnectionInterface
 {
-    public function __construct($dsn, $username = '', $password = '', $driver_options=[]);
+    public function __construct($dsn, $username = '', $password = '', $driver_options = []);
 
     public function driver_name();
     public function database_name(): string;

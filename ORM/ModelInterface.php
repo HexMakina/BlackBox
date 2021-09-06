@@ -2,7 +2,7 @@
 
 namespace HexMakina\Interfaces\ORM;
 
-use \HexMakina\Interfaces\Database\{TableManipulationInterface, SelectInterface};
+use HexMakina\Interfaces\Database\{TableManipulationInterface, SelectInterface};
 
 interface ModelInterface
 {
