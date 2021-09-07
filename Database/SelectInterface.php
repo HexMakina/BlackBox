@@ -22,7 +22,7 @@ interface SelectInterface extends QueryInterface
     public function ret_par();
     public function ret_key();
 
-    public function and_where($where_condition, $where_bindings = []);
+    public function and_where($where_condition);
 
     public function aw_primary($pk_values);
 
@@ -33,7 +33,7 @@ interface SelectInterface extends QueryInterface
 
     public function aw_gte($field, $value, $table_name = null, $bindname = null);
     public function aw_lte($field, $value, $table_name = null, $bindname = null);
-  
+
     public function aw_fields_eq($assoc_data, $table_name = null);
 
     public function aw_like($field, $prep_value, $table_name = null, $bindname = null);
