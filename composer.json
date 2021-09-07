@@ -1,0 +1,23 @@
+{
+    "name": "hexmakina/interfaces",
+    "description": "PHP Interface for web development",
+    "keywords": ["interfaces"],
+    "type": "package",
+    "require": {
+        "php": ">=7.3"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "HexMakina",
+            "email": "touch@hexmakina.be",
+            "homepage": "https://hexmakina.be"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "HexMakina\\Interfaces\\": "/"
+        }
+    }
+}
