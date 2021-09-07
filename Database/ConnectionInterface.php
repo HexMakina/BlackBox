@@ -6,8 +6,8 @@ interface ConnectionInterface
 {
     public function __construct($dsn, $username = '', $password = '', $driver_options = []);
 
-    public function driver_name();
-    public function database_name(): string;
+    public function driverName();
+    public function databaseName(): string;
 
     public function prepare($sql_statement, $options = []);
 
@@ -15,9 +15,9 @@ interface ConnectionInterface
     public function commit(): bool;
     public function rollback(): bool;
 
-    public function last_inserted_id($name = null);
-    public function error_code(): array;
-    public function error_info(): array;
+    public function lastInsertId($name = null);
+    public function errorCode(): ?string;
+    public function errorInfo(): array;
 
     public function query($sql_statement, $fetch_mode = null, $fetch_col_num = null);
     public function alter($sql_statement);
