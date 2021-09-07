@@ -4,7 +4,7 @@ namespace HexMakina\Interfaces\Controllers;
 
 // use Psr\Container\ContainerInterface;
 use HexMakina\Interfaces\RouterInterface;
-use HexMakina\LogLaddy\LoggerInterface;
+use Psr\Log\LoggerInterface;
 
 interface BaseControllerInterface
 {
