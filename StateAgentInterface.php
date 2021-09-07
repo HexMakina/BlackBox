@@ -7,6 +7,9 @@ interface StateAgentInterface
     const INDEX_MESSAGES = 'u_mess';
     const INDEX_FILTER = 'filter';
     const INDEX_OPERATOR = 'op';
+    const DEFAULT_SESSION_NAME = 'IS-54-16'; // State Agent Smith Reloaded License
+
+    public static function getInstance(): StateAgentInterface;
 
     // camelCase wrapper for setcookie, coherent with getCookie
     public function setCookie($name, $value = "", $expires_in = 365 * 24 * 60 * 60, $path = "/", $domain = "", $secure = false, $httponly = false): bool;
