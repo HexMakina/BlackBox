@@ -19,11 +19,11 @@ interface QueryInterface
     public function getBindings(): array;
 
     public function addBindings($assoc_data): array;
-    public function addBinding($field, $value, $table_name=null, $bind_label=null): string;
+    public function addBinding($field, $value, $table_name = null, $bind_label = null): string;
 
     public function bindLabel($field, $table_name = null): string;
 
-    public function backTick($string, $table_name=null): string;
+    public function backTick($string, $table_name = null): string;
 
     public function run(): QueryInterface;
 }
