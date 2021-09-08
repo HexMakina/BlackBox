@@ -4,22 +4,22 @@ namespace HexMakina\Interfaces\Database;
 
 interface ColumnTypeInterface
 {
-    const TYPE_BOOLEAN = 'boolean';
+    public const TYPE_BOOLEAN = 'boolean';
 
-    const TYPE_INTEGER = 'integer';
-    const TYPE_FLOAT = 'float';
-    const TYPE_DECIMAL = 'decimal';
+    public const TYPE_INTEGER = 'integer';
+    public const TYPE_FLOAT = 'float';
+    public const TYPE_DECIMAL = 'decimal';
 
-    const TYPE_TEXT = 'text';
-    const TYPE_STRING = 'char';
+    public const TYPE_TEXT = 'text';
+    public const TYPE_STRING = 'char';
 
-    const TYPE_DATETIME = 'datetime';
-    const TYPE_DATE = 'date';
-    const TYPE_TIMESTAMP = 'timestamp';
-    const TYPE_TIME = 'time';
-    const TYPE_YEAR = 'year';
+    public const TYPE_DATETIME = 'datetime';
+    public const TYPE_DATE = 'date';
+    public const TYPE_TIMESTAMP = 'timestamp';
+    public const TYPE_TIME = 'time';
+    public const TYPE_YEAR = 'year';
 
-    const TYPE_ENUM = 'enum';
+    public const TYPE_ENUM = 'enum';
 
   // public function isText(): bool;
   // public function isString(): bool;
