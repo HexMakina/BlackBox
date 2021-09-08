@@ -19,9 +19,8 @@ interface BaseControllerInterface
     public function conclude();
 
     public function errors(): array;
-    public function add_error($message, $context = []);
+    public function addError($message, $context = []);
 
-    public function has_route_back(): bool;
-    public function route_back($route_name = null, $route_params = []): string;
-    public function route_factory($route_name = null, $route_params = []): string;
+    public function routeBack($route_name = null, $route_params = []): string;
+    public function routeFactory($route_name = null, $route_params = []): string;
 }
