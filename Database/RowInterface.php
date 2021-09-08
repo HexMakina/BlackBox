@@ -5,15 +5,14 @@ namespace HexMakina\Interfaces\Database;
 interface RowInterface
 {
     public function table(): TableManipulationInterface;
-    
-    public function last_query();
 
-    public function last_alter_query(): QueryInterface;
+    public function lastQuery();
 
-    public function is_new(): bool;
+    public function lastAlterQuery(): QueryInterface;
 
-    public function is_loaded(): bool;
-    public function is_altered(): bool;
+    public function isNew(): bool;
+
+    public function isAltered(): bool;
 
     public function export(): array;
 
