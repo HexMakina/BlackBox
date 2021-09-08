@@ -4,10 +4,10 @@ namespace HexMakina\Interfaces;
 
 interface StateAgentInterface
 {
-    const INDEX_MESSAGES = 'u_mess';
-    const INDEX_FILTER = 'filter';
-    const INDEX_OPERATOR = 'op';
-    const DEFAULT_SESSION_NAME = 'IS-54-16'; // State Agent Smith Reloaded License
+    public const INDEX_MESSAGES = 'u_mess';
+    public const INDEX_FILTER = 'filter';
+    public const INDEX_OPERATOR = 'op';
+    public const DEFAULT_SESSION_NAME = 'IS-54-16'; // State Agent Smith Reloaded License
 
     public static function getInstance(): StateAgentInterface;
 

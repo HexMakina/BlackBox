@@ -4,9 +4,9 @@ namespace HexMakina\Interfaces;
 
 interface RouterInterface
 {
-    const REQUEST_GET = 'GET';
-    const REQUEST_POST = 'POST';
-    const ROUTE_HOME_NAME = 'home';
+    public const REQUEST_GET = 'GET';
+    public const REQUEST_POST = 'POST';
+    public const ROUTE_HOME_NAME = 'home';
 
     public function mapHomeRoute($route);
     public function routeExists($route): bool;
