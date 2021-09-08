@@ -1,5 +1,5 @@
 {
-    "name": "hexmakina/interfaces",
+    "name": "hexmakina/black-box",
     "description": "PHP Interface for web development",
     "keywords": ["interfaces"],
     "type": "package",
@@ -18,7 +18,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "HexMakina\\Interfaces\\": "/"
+            "HexMakina\\BlackBox\\": "/"
         }
     }
 }
