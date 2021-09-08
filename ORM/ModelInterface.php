@@ -6,7 +6,7 @@ use HexMakina\Interfaces\Database\{TableManipulationInterface, SelectInterface};
 
 interface ModelInterface
 {
-    const IMMORTAL_BY_DEFAULT = true; // immortal by default, prevent deletion without thinking, NEVER change that value
+    public const IMMORTAL_BY_DEFAULT = true; // immortal by default, prevent deletion without thinking, NEVER change that value
 
     public function immortal(): bool;
 
