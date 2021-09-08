@@ -10,7 +10,7 @@ interface ORMInterface
     public function modelClassName(): string;
     // public function table_name(): string;
 
-    public function load_model(): ?ModelInterface;
+    public function loadModel(): ?ModelInterface;
     public function formModel(): ModelInterface;
 
     public function dashboard();
@@ -34,5 +34,5 @@ interface ORMInterface
     public function copy();
 
     public function errors(): array;
-    public function add_errors($errors);
+    public function addErrors($errors);
 }
