@@ -10,8 +10,9 @@ interface ModelInterface
 
     public function immortal(): bool;
 
-    public function is_new(): bool;
-    public function get_id();
+    public function isNew(): bool;
+
+    public function getId($mode = null);
 
     public function get($prop_name);
     public function set($prop_name, $value);
