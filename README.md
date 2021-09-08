@@ -1,2 +1,2 @@
 # Interfaces
-General Purposes Interfaces
+All the interfaces for the HexMakina software collection
