@@ -1,9 +1,9 @@
 <?php
 
-namespace HexMakina\Interfaces\Controllers;
+namespace HexMakina\BlackBox\Controllers;
 
 // use Psr\Container\ContainerInterface;
-use HexMakina\Interfaces\RouterInterface;
+use HexMakina\BlackBox\RouterInterface;
 use Psr\Log\LoggerInterface;
 
 interface BaseControllerInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace HexMakina\Interfaces\Auth;
+namespace HexMakina\BlackBox\Auth;
 
 interface OperatorInterface
 {

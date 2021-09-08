@@ -1,8 +1,8 @@
 <?php
 
-namespace HexMakina\Interfaces\Controllers;
+namespace HexMakina\BlackBox\Controllers;
 
-use HexMakina\Interfaces\ORM\ModelInterface;
+use HexMakina\BlackBox\ORM\ModelInterface;
 
 interface ORMInterface
 {

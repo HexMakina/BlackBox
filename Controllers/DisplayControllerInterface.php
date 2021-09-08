@@ -1,6 +1,6 @@
 <?php
 
-namespace HexMakina\Interfaces\Controllers;
+namespace HexMakina\BlackBox\Controllers;
 
 interface DisplayControllerInterface extends BaseControllerInterface
 {

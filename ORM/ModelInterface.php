@@ -1,8 +1,8 @@
 <?php
 
-namespace HexMakina\Interfaces\ORM;
+namespace HexMakina\BlackBox\ORM;
 
-use HexMakina\Interfaces\Database\{TableManipulationInterface, SelectInterface};
+use HexMakina\BlackBox\Database\{TableManipulationInterface, SelectInterface};
 
 interface ModelInterface
 {

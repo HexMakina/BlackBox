@@ -1,6 +1,6 @@
 <?php
 
-namespace HexMakina\Interfaces\Database;
+namespace HexMakina\BlackBox\Database;
 
 interface DatabaseInterface
 {

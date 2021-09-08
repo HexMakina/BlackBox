@@ -1,8 +1,8 @@
 <?php
 
-namespace HexMakina\Interfaces\Controllers;
+namespace HexMakina\BlackBox\Controllers;
 
-use HexMakina\Interfaces\Auth\OperatorInterface;
+use HexMakina\BlackBox\Auth\OperatorInterface;
 
 interface AuthControllerInterface
 {

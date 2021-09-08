@@ -1,6 +1,6 @@
 <?php
 
-namespace HexMakina\Interfaces\ORM;
+namespace HexMakina\BlackBox\ORM;
 
 interface RelationManyToManyInterface
 {

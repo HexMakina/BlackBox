@@ -1,6 +1,6 @@
 <?php
 
-namespace HexMakina\Interfaces;
+namespace HexMakina\BlackBox;
 
 interface RouterInterface
 {
