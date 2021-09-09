@@ -1,11 +1,11 @@
 {
     "name": "hexmakina/black-box",
-    "description": "PHP Interface for web development",
+    "description": "PHP Interfaces for web development",
     "keywords": ["interfaces"],
     "type": "package",
     "require": {
         "php": ">=7.1",
-        "psr/log": "1.1.2"
+        "psr/log": "1.1.*"
     },
     "license": "mit",
     "authors": [
