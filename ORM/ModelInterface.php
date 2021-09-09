@@ -31,8 +31,8 @@ interface ModelInterface
     public function after_destroy();
 
     public static function table(): TableManipulationInterface;
-    public static function table_name(): string;
-    public static function table_alias(): string;
+    public static function relationalMappingName(): string;
+    public static function tableAlias(): string;
 
     public static function model_type(): string;
 
