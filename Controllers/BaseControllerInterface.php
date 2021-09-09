@@ -15,7 +15,7 @@ interface BaseControllerInterface
     // public function set_container(ContainerInterface $container);
 
     public function prepare();
-    public function execute();
+    public function execute($method);
     public function conclude();
 
     public function errors(): array;
