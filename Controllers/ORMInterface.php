@@ -8,7 +8,6 @@ interface ORMInterface
 {
     // ORM class tranlator
     public function modelClassName(): string;
-    // public function table_name(): string;
 
     public function loadModel(): ?ModelInterface;
     public function formModel(): ModelInterface;

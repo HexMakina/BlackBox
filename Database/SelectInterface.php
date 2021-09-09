@@ -4,49 +4,51 @@ namespace HexMakina\BlackBox\Database;
 
 interface SelectInterface extends QueryInterface
 {
-    public function table_alias($setter = null); // TODO should only be a setter
-    public function table_label($forced_value = null);
+    public function tableAlias($setter = null); // TODO should only be a setter
+    public function tableLabel($forced_value = null);
 
     public function columns($setter = null);
-    public function select_also($setter);
+    public function selectAlso($setter);
 
-    public function group_by($clause);
+    public function groupBy($clause);
     public function having($condition);
-    public function order_by($clause);
+    public function orderBy($clause);
     public function limit($number, $offset = null);
 
-    public function ret_obj($c = null);
-    public function ret_num();
-    public function ret_ass();
-    public function ret_col();
-    public function ret_par();
-    public function ret_key();
+    public function retObj($c = null);
+    public function retNum();
+    public function retAss();
+    public function retCol();
+    public function retPar();
+    public function retKey();
 
-    public function and_where($where_condition);
+    public function where($where_condition);
 
-    public function aw_primary($pk_values);
+    public function wherePrimary($pk_values);
 
-    public function aw_eq_or_null($field, $value, $table_name = null, $bindname = null);
-    public function aw_eq($field, $value, $table_name = null, $bindname = null);
-    public function aw_gt($field, $value, $table_name = null, $bindname = null);
-    public function aw_lt($field, $value, $table_name = null, $bindname = null);
+    public function whereEqualOrNull($field, $value, $table_name = null, $bindname = null);
 
-    public function aw_gte($field, $value, $table_name = null, $bindname = null);
-    public function aw_lte($field, $value, $table_name = null, $bindname = null);
+    public function whereNotEQ($field, $value, $table_name = null, $bindname = null);
+    public function whereEQ($field, $value, $table_name = null, $bindname = null);
+    public function whereGT($field, $value, $table_name = null, $bindname = null);
+    public function whereLT($field, $value, $table_name = null, $bindname = null);
 
-    public function aw_fields_eq($assoc_data, $table_name = null);
+    public function whereGTE($field, $value, $table_name = null, $bindname = null);
+    public function whereLTE($field, $value, $table_name = null, $bindname = null);
 
-    public function aw_like($field, $prep_value, $table_name = null, $bindname = null);
-    public function aw_not_like($field, $prep_value, $table_name = null, $bindname = null);
+    public function whereFieldsEQ($assoc_data, $table_name = null);
 
-    public function aw_numeric_in($field, $values, $table_name = null);
-    public function aw_string_in($field, $values, $table_name = null);
+    public function whereLike($field, $prep_value, $table_name = null, $bindname = null);
+    public function whereNotLike($field, $prep_value, $table_name = null, $bindname = null);
 
-    public function aw_empty($field, $table_name = null);
-    public function aw_not_empty($field, $table_name = null);
-    public function aw_is_null($field, $table_name = null);
+    public function whereNumericIn($field, $values, $table_name = null);
+    public function whereStringIn($field, $values, $table_name = null);
 
-    public function aw_field($field, $condition, $table_name = null);
+    public function whereEmpty($field, $table_name = null);
+    public function whereNotEmpty($field, $table_name = null);
+    public function whereIsNull($field, $table_name = null);
 
-    public function aw_filter_content($filters_content, $search_table = null, $filters_operator = null);
+    public function whereField($field, $condition, $table_name = null);
+
+    public function whereFilterContent($filters_content, $search_table = null, $filters_operator = null);
 }
