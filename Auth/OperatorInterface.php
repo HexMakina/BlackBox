@@ -22,4 +22,6 @@ interface OperatorInterface
     public function name();
 
     public function hasPermission($p): bool;
+
+    public static function safeLoading($op_id): OperatorInterface;
 }
