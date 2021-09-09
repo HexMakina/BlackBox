@@ -8,6 +8,7 @@ interface ConnectionInterface
 
     public function driverName();
     public function databaseName(): string;
+    public function useDatabase($name);
 
     public function prepare($sql_statement, $options = []);
 
