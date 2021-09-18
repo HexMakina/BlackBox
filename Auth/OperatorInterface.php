@@ -2,13 +2,12 @@
 
 namespace HexMakina\BlackBox\Auth;
 
-interface OperatorInterface
+interface OperatorInterface 
 {
+    public function getId();
+
     public function isActive(): bool;
     public function isNew(): bool;
-
-
-    public function operatorId();
 
     public function username();
     public function password();
