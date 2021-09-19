@@ -4,7 +4,6 @@ namespace HexMakina\BlackBox\Database;
 
 interface SelectInterface extends QueryInterface
 {
-    public function tableAlias($setter = null); // TODO should only be a setter
     public function tableLabel($forced_value = null);
 
     public function columns($setter = null);
