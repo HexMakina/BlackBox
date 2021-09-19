@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Auth;
 
-interface OperatorInterface 
+interface OperatorInterface
 {
     public function getId();
 
