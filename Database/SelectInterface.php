@@ -10,6 +10,7 @@ interface SelectInterface extends QueryInterface
     public function columns($setter = null);
     public function selectAlso($setter);
 
+    public function join($table_names, $joins, $join_type = '');
     public function groupBy($clause);
     public function having($condition);
     public function orderBy($clause);
