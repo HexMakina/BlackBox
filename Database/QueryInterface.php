@@ -25,5 +25,7 @@ interface QueryInterface
 
     public function backTick($string, $table_name = null): string;
 
+    public function joinedTables(): array;
+
     public function run(): QueryInterface;
 }
