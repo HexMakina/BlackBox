@@ -27,7 +27,15 @@ interface RouterInterface
 
     // heads to another location
     public function hop($route = null, $route_params = []);
+
+    // hops back to previous page (referer()), or home if no referer
+    public function hopBack();
+
+    // access POST data
     public function submitted($param_name = null);
+
+    // access GET data
+    public function params($param_name = null);
 
     public function sendFile($file_path);
 
