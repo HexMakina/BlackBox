@@ -29,7 +29,7 @@ interface TableDescriptionInterface
     /** @return array<string,array> */
     public function foreignKeysByTable(): array;
 
-    public function singleForeignKeyTo(TableDescriptionInterface $other_table) : ?array;
+    public function singleForeignKeyTo(TableDescriptionInterface $other_table): ?array;
 
 
     /** @param array<string,TableColumnInterface> $columns     */

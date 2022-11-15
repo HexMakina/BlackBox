@@ -23,7 +23,7 @@ interface StateAgentInterface
     ): bool;
 
     // returns the value stored or null
-    public function getCookie(string $name) : mixed;
+    public function getCookie(string $name): mixed;
 
     public function addMessage(mixed $level, string $message, array $context = []): void;
     public function messages(mixed $level = null);
@@ -36,8 +36,8 @@ interface StateAgentInterface
     public function filters(string $filter_name = null, mixed $value = null): mixed;
     public function resetFilters(string $filter_name = null): void;
 
-    public function operatorId(mixed $setter = null) : mixed;
-    public function operatorCheckinDate() : mixed;
+    public function operatorId(mixed $setter = null): mixed;
+    public function operatorCheckinDate(): mixed;
 
     public function destroy(): bool;
 }

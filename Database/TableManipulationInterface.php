@@ -31,5 +31,4 @@ interface TableManipulationInterface extends TableDescriptionInterface
 
     /** @param array<string,mixed> $conditions */
     public function delete(array $conditions): QueryInterface;
-
 }
