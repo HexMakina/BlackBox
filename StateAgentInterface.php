@@ -12,25 +12,32 @@ interface StateAgentInterface
     public static function getInstance(): StateAgentInterface;
 
     // camelCase wrapper for setcookie, coherent with getCookie
-    public function setCookie($name, $value = '', $expires_in = 365 * 24 * 60 * 60, $path = '/', $domain = '', $secure = false, $httponly = false): bool;
+    public function setCookie(
+        string $name,
+        string $value = "",
+        int $expires_in = 365 * 24 * 60 * 60,
+        string $path = "/",
+        string $domain = "",
+        bool $secure = false,
+        bool $httponly = false
+    ): bool;
 
     // returns the value stored or null
-    public function getCookie($name);
+    public function getCookie(string $name) : mixed;
 
-    public function addMessage($level, $message, $context = []);
-    public function messages($level = null);
-    public function resetMessages($level = null);
+    public function addMessage(mixed $level, string $message, array $context = []): void;
+    public function messages(mixed $level = null);
+    public function resetMessages(mixed $level = null): void;
 
+    public function addRuntimeFilters(array $filters): void;
+    public function hasFilter(string $filter_name): bool;
 
-    public function addRuntimeFilters($filters);
-    public function hasFilter($filter_name): bool;
+    public function addFilter(string $filter_name, mixed $value): void;
+    public function filters(string $filter_name = null, mixed $value = null): mixed;
+    public function resetFilters(string $filter_name = null): void;
 
-    public function addFilter($filter_name, $value);
-    public function filters($filter_name = null, $value = null);
-    public function resetFilters($filter_name = null);
-
-    public function operatorId($setter = null);
-    public function operatorCheckinDate();
+    public function operatorId(mixed $setter = null) : mixed;
+    public function operatorCheckinDate() : mixed;
 
     public function destroy(): bool;
 }
