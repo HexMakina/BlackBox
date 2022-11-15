@@ -26,10 +26,9 @@ interface RowInterface
      * 2. multiple records are returned
      * 3. no record is found
      *
-     * @param  Array $dat_ass an associative array containing primary key data matches
-     * @return $this
+     * @param  array<int|string,mixed> $dat_ass an associative array containing primary key data matches
      */
-    public function load($dat_ass);
+    public function load(array $dat_ass): Rowinterface;
 
 
     /**
@@ -37,10 +36,9 @@ interface RowInterface
      *
      * loops through the $dat_ass params
      *
-     * @param  Array $dat_ass an associative array containing the new data
-     * @return $this
+     * @param  array<int|string,mixed> $dat_ass an associative array containing the new data
      */
-    public function alter($dat_ass);
+    public function alter(array $dat_ass): Rowinterface;
 
     public function persist(): array;
     public function wipe(): bool;

@@ -15,7 +15,7 @@ interface TableDescriptionInterface
 
     public function addColumn(TableColumnInterface $column);
     public function columns(): array;
-    public function column($name);
+    public function column(string $name): ?TableColumnInterface;
 
     public function addPrimaryKey(TableColumnInterface $column);
     public function primaryKeys($with_values = null): array;
