@@ -9,6 +9,10 @@ interface TableDescriptionInterface
     public function name(): string;
 
     //introspection
+
+    /** @return array<string,array> */
+    public function describe(): array;
+
     public function addColumn(TableColumnInterface $column);
     public function columns(): array;
     public function column($name);
@@ -18,11 +22,20 @@ interface TableDescriptionInterface
     public function primaryKeysMatch($dat_ass): array;
 
     public function addForeignKey(TableColumnInterface $column);
-    public function foreignKeysByName(): array;
-    public function foreignKeysByTable(): array;
-    public function singleForeignKeyTo($other_table);
 
-    public function addUniqueKey($constraint_name, $columns);
+    /** @return array<string,TableColumnInterface> */
+    public function foreignKeysByName(): array;
+
+    /** @return array<string,array> */
+    public function foreignKeysByTable(): array;
+
+    public function singleForeignKeyTo(TableDescriptionInterface $other_table) : ?array;
+
+
+    /** @param array<string,TableColumnInterface> $columns     */
+    public function addUniqueKey(string $constraint_name, array $columns);
+
+    /** @return array<string,TableColumnInterface>    */
     public function uniqueKeysByName(): array;
 
     public function autoIncrementedPrimaryKey(TableColumnInterface $setter = null);

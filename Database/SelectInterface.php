@@ -14,6 +14,7 @@ interface SelectInterface extends QueryInterface
     public function having($condition);
     public function orderBy($clause);
     public function limit($number, $offset = null);
+    public function addTables($setter);
 
     public function retObj($c = null);
     public function retNum();

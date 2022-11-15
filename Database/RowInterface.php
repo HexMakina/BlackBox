@@ -6,9 +6,9 @@ interface RowInterface
 {
     public function table(): TableManipulationInterface;
 
-    public function lastQuery();
+    public function lastQuery(): ?QueryInterface;
 
-    public function lastAlterQuery(): QueryInterface;
+    public function lastAlterQuery(): ?QueryInterface;
 
     public function isNew(): bool;
 
