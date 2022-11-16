@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface TableDescriptionInterface
+interface TableMetaInterface
 {
     // getters
     public function connection(): ConnectionInterface;
@@ -11,7 +11,7 @@ interface TableDescriptionInterface
     //introspection
 
     /** @return array<string,array> */
-    public function describe(): array;
+    public function describe($schema): array;
 
     public function addColumn(TableColumnInterface $column);
     public function columns(): array;
@@ -29,7 +29,7 @@ interface TableDescriptionInterface
     /** @return array<string,array> */
     public function foreignKeysByTable(): array;
 
-    public function singleForeignKeyTo(TableDescriptionInterface $other_table): ?array;
+    public function singleForeignKeyTo(TableMetaInterface $other_table): ?array;
 
 
     /** @param array<string,TableColumnInterface> $columns     */

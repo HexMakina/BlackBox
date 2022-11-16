@@ -4,7 +4,7 @@ namespace HexMakina\BlackBox\Database;
 
 interface RowInterface
 {
-    public function table(): TableManipulationInterface;
+    public function table(): TableInterface;
 
     public function lastQuery(): ?QueryInterface;
 

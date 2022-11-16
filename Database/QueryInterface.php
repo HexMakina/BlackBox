@@ -8,7 +8,7 @@ interface QueryInterface
 
     public function connection(ConnectionInterface $setter = null): ConnectionInterface;
 
-    public function table(): TableManipulationInterface;
+    public function table(): TableInterface;
     public function tableName(): string;
     public function tableAlias($setter = null): string;
 

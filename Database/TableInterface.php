@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface TableManipulationInterface extends TableDescriptionInterface
+interface TableInterface extends TableMetaInterface
 {
     // fetch or instantiate new Table\Rows
 
@@ -31,4 +31,5 @@ interface TableManipulationInterface extends TableDescriptionInterface
 
     /** @param array<string,mixed> $conditions */
     public function delete(array $conditions): QueryInterface;
+
 }
