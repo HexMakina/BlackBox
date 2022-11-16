@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface TableColumnInterface
+interface ColumnInterface
 {
     public function name(): string;
     public function tableName(): string;
