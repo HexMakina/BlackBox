@@ -51,5 +51,6 @@ interface SelectInterface extends QueryInterface
 
     public function whereField($field, $condition, $table_name = null);
 
-    public function whereFilterContent($filters_content, $search_table = null, $filters_operator = null);
+    public function whereFilterContent(array $filters_content, $search_table = null, $filters_operator = null);
+
 }

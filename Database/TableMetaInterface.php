@@ -26,7 +26,7 @@ interface TableMetaInterface
     /** @return array<string,ColumnInterface> */
     public function foreignKeysByName(): array;
 
-    /** @return array<string,array> */
+    /** @return array<string,ColumnInterface> */
     public function foreignKeysByTable(): array;
 
     public function singleForeignKeyTo(TableMetaInterface $other_table): ?ColumnInterface;
