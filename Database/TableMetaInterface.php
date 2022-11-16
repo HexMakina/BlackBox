@@ -11,7 +11,7 @@ interface TableMetaInterface
     //introspection
 
     /** @return array<string,array> */
-    public function describe($schema): array;
+    public function describe($schema): void;
 
     public function addColumn(ColumnInterface $column);
     public function columns(): array;
