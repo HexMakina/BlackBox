@@ -40,5 +40,5 @@ interface ColumnTypeInterface
     public function isDatetime(): bool;
     public function isDateOrTime(): bool;
 
-    public function validateValue($field_value);
+    public function validateValue(string $field_value);
 }
