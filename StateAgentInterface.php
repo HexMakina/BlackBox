@@ -33,7 +33,7 @@ interface StateAgentInterface
     public function hasFilter(string $filter_name): bool;
 
     public function addFilter(string $filter_name, string $value): void;
-    public function filters(string $filter_name = null, string $value = null): string;
+    public function filters(string $filter_name = null, string $value = null): ?string;
     public function resetFilters(string $filter_name = null): void;
 
     public function operatorId(string $setter = null): ?string;
