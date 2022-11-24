@@ -19,7 +19,7 @@ interface TableMetaInterface
 
     public function addPrimaryKey(ColumnInterface $column);
     public function primaryKeys($with_values = null): array;
-    public function primaryKeysMatch($dat_ass): array;
+    public function primaryKeysMatch(array $dat_ass): array;
 
     public function addForeignKey(ColumnInterface $column);
 
