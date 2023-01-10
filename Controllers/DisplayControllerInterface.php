@@ -44,5 +44,5 @@ interface DisplayControllerInterface extends BaseControllerInterface
 
     public function viewport($key = null, $value = null, $coercion = false);
 
-    public function display($custom_template = null, $standalone = false);
+    public function display($template, $standalone = false) : string;
 }
