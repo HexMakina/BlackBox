@@ -2,20 +2,8 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface QueryInterface
+interface PreparedQueryInterface extends QueryInterface
 {
-    public function statement($setter = null): string;
-
-    public function connection(ConnectionInterface $setter = null): ConnectionInterface;
-
-    public function table(): TableInterface;
-    public function tableName(): string;
-    public function tableAlias($setter = null): string;
-
-    public function isPrepared(): bool;
-    public function isExecuted(): bool;
-    public function isSuccess(): bool;
-
     public function setBindings($dat_ass);
 
     // returns assoc bind_label => bind_value
@@ -32,10 +20,8 @@ interface QueryInterface
 
     public function bindLabel($field, $table_name = null): string;
 
-    public function backTick($string, $table_name = null): string;
-
     // public function join()
     public function joinedTables(): array;
 
-    public function run(): QueryInterface;
+    public function run(): PreparedQueryInterface;
 }
