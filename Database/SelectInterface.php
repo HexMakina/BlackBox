@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface SelectInterface extends QueryInterface
+interface SelectInterface extends PreparedQueryInterface
 {
     public function tableLabel($forced_value = null);
 
@@ -24,6 +24,8 @@ interface SelectInterface extends QueryInterface
     public function retKey();
 
     public function where($where_condition);
+    public function whereWithBind($where, $value);
+    public function whereBindField($table, $field, $operator, $value);
 
     public function wherePrimary($pk_values);
 
