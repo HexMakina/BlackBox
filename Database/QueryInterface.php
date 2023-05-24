@@ -38,4 +38,7 @@ interface QueryInterface
     public function joinedTables(): array;
 
     public function run(): QueryInterface;
+
+
+    public function errorInfo(): array;
 }
