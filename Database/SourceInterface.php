@@ -10,6 +10,4 @@ interface SourceInterface
     public function database(): string;
 
     public function driver(): string;
-
-    public function driverAvailable(): bool;
 }
