@@ -9,4 +9,6 @@ interface DatabaseInterface
     public function name();
 
     public function inspect(string $table_name): TableInterface;
+
+    public function schema(): SchemaInterface;
 }
