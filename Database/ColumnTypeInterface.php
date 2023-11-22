@@ -2,6 +2,8 @@
 
 namespace HexMakina\BlackBox\Database;
 
+use HexMakina\Crudites\Errors\CruditesError;
+
 interface ColumnTypeInterface
 {
     public const TYPE_BOOLEAN = 'boolean';
@@ -40,5 +42,5 @@ interface ColumnTypeInterface
     public function isDatetime(): bool;
     public function isDateOrTime(): bool;
 
-    public function validateValue(string $field_value);
+    public function validateValue($value=null): ?CruditesError;
 }
