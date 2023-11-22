@@ -24,6 +24,7 @@ interface SelectInterface extends PreparedQueryInterface
     public function retKey();
 
     public function where($where_condition);
+    public function whereWithBind($where);
     public function whereBindField($table, $field, $operator, $value);
 
     public function wherePrimary($pk_values);
