@@ -14,7 +14,7 @@ interface SelectInterface extends PreparedQueryInterface
     public function having($condition);
     public function orderBy($clause);
     public function limit($number, $offset = null);
-    public function addTables($setter);
+    public function addJoinedTable($name, $alias);
 
     public function retObj($c = null);
     public function retNum();
@@ -24,7 +24,6 @@ interface SelectInterface extends PreparedQueryInterface
     public function retKey();
 
     public function where($where_condition);
-    public function whereWithBind($where, $value);
     public function whereBindField($table, $field, $operator, $value);
 
     public function wherePrimary($pk_values);
