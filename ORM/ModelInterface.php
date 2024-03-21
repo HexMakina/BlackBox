@@ -36,5 +36,5 @@ interface ModelInterface
 
     public static function model_type(): string;
 
-    public static function query_retrieve($filters = [], $options = []): SelectInterface;
+    public static function filter($filters = [], $options = []): SelectInterface;
 }
