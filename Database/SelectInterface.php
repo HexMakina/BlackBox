@@ -7,7 +7,7 @@ interface SelectInterface extends PreparedQueryInterface
     public function tableLabel($forced_value = null);
 
     public function columns($setter = null);
-    public function selectAlso($setter);
+    public function selectAlso(array $setter);
 
     public function join($table_names, $joins, $join_type = '');
     public function groupBy($clause);
