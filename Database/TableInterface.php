@@ -19,16 +19,16 @@ interface TableInterface extends TableMetaInterface
 
 
     /** @param array<mixed,mixed> $dat_ass   */
-    public function insert(array $dat_ass): QueryInterface;
+    public function insert(array $dat_ass): PreparedQueryInterface;
 
     /** @param array<string,string> $columns */
-    public function select(array $columns = null, string $table_alias = null): SelectInterface;
+    public function select(array $columns = null, string $table_alias = null): PreparedQueryInterface;
 
     /** @param array<mixed,mixed> $modifications
       * @param array<mixed,mixed> $conditions
       */
-    public function update(array $modifications = [], array $conditions = []): QueryInterface;
+    public function update(array $modifications = [], array $conditions = []): PreparedQueryInterface;
 
     /** @param array<string,mixed> $conditions */
-    public function delete(array $conditions): QueryInterface;
+    public function delete(array $conditions): PreparedQueryInterface;
 }
