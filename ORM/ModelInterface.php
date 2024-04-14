@@ -12,6 +12,7 @@ interface ModelInterface
 
     public function isNew(): bool;
 
+    public function id();
     public function getId($mode = null);
 
     public function get($prop_name);
@@ -31,7 +32,7 @@ interface ModelInterface
     public function after_destroy();
 
     public static function table(): TableInterface;
-    public static function relationalMappingName(): string;
+    // public static function relationalMappingName(): string;
     public static function tableAlias(): string;
 
     public static function model_type(): string;
