@@ -4,9 +4,9 @@ namespace HexMakina\BlackBox;
 
 interface StateAgentInterface
 {
-    public const INDEX_MESSAGES = 'u_mess';
-    public const INDEX_FILTER = 'filter';
-    public const INDEX_OPERATOR = 'op';
+    // public const INDEX_MESSAGES = 'u_mess';
+    // public const INDEX_FILTER = 'filter';
+    // public const INDEX_OPERATOR = 'op';
     public const DEFAULT_SESSION_NAME = 'IS-54-16'; // State Agent Smith Reloaded License
 
     public static function getInstance(): StateAgentInterface;
@@ -31,7 +31,4 @@ interface StateAgentInterface
 
     // returns the value stored or null
     public function getCookie(string $name): ?string;
-
-    public function operatorId(string $setter = null): ?string;
-    public function operatorCheckinDate(): string;
 }
