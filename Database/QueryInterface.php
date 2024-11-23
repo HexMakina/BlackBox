@@ -4,12 +4,12 @@ namespace HexMakina\BlackBox\Database;
 
 interface QueryInterface
 {
-    public function statement($setter = null): string;
+    public function statement(): string;
 
     public function connection(ConnectionInterface $setter = null): ConnectionInterface;
 
-    public function table(): TableInterface;
-    public function tableName(): string;
+    public function table(): string;
+    // public function tableName(): string;
     public function tableAlias($setter = null): string;
 
     public function isPrepared(): bool;

@@ -27,8 +27,6 @@ interface SelectInterface extends PreparedQueryInterface
     public function whereWithBind($where);
     public function whereBindField($table, $field, $operator, $value);
 
-    public function wherePrimary($pk_values);
-
     public function whereEqualOrNull($field, $value, $table_name = null, $bindname = null);
 
     public function whereNotEQ($field, $value, $table_name = null, $bindname = null);
