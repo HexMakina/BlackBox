@@ -31,8 +31,7 @@ interface ModelInterface
     public function destroy($operator_id): bool;
     public function after_destroy();
 
-    public static function table(): TableInterface;
-    // public static function relationalMappingName(): string;
+    public static function table(): string;
     public static function tableAlias(): string;
 
     public static function model_type(): string;
