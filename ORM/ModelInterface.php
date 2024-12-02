@@ -12,6 +12,7 @@ interface ModelInterface
 
     public function isNew(): bool;
 
+    public function id();
     public function getId($mode = null);
 
     public function get($prop_name);
@@ -35,5 +36,5 @@ interface ModelInterface
 
     public static function model_type(): string;
 
-    public static function query_retrieve($filters = [], $options = []): SelectInterface;
+    public static function filter($filters = [], $options = []): SelectInterface;
 }

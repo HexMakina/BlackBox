@@ -19,7 +19,7 @@ interface QueryInterface
     public function addBindings($assoc_data): array;
 
     // return the binding name computed or given for the field
-    public function addBinding($field, $value, $table_name = null, $bind_label = null): string;
+    public function addBinding($field, $value, $table_name, $bind_label = null): string;
 
     // return an assoc [column_name => bind_label]
     public function getBindingNames(): array;
