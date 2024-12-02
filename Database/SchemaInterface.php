@@ -181,5 +181,5 @@ interface SchemaInterface
      * @param string|null $table_alias The alias for the table.
      * @return SelectInterface The select query.
      */
-    public function select(string $table, array $columns = null, string $table_alias = null): SelectInterface;
+    public function select(string $table, array $columns = null, string $table_alias = null): QueryInterface;
 }
