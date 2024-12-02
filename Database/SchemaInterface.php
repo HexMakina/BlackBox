@@ -10,13 +10,6 @@ namespace HexMakina\BlackBox\Database;
 interface SchemaInterface
 {
     /**
-     * Gets the database connection.
-     *
-     * @return ConnectionInterface
-     */
-    public function connection(): ConnectionInterface;
-
-    /**
      * Retrieves all tables in the database.
      * @return array<string> The names of the tables.
      */
