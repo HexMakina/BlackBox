@@ -2,6 +2,8 @@
 
 namespace HexMakina\BlackBox\Database;
 
+use HexMakina\Crudites\Grammar\Clause\Clause;
+
 interface QueryInterface
 {
 
@@ -11,7 +13,7 @@ interface QueryInterface
     // returns assoc bind_label => bind_value
     public function bindings(): array;
 
-
+    public function add(Clause $clause): self;
     public function table(): string;
     public function tableAlias($setter = null): string;
 
