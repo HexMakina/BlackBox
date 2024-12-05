@@ -12,7 +12,7 @@ interface SchemaAttributeInterface
     public const TYPE_DECIMAL = 'decimal';
 
     public const TYPE_TEXT = 'text';
-    public const TYPE_STRING = 'char';
+    public const TYPE_STRING = 'string';
 
     public const TYPE_DATETIME = 'datetime';
     public const TYPE_DATE = 'date';
@@ -31,5 +31,5 @@ interface SchemaAttributeInterface
     public function type(): ?string;
     public function isAuto(): bool;
 
-    public function validateValue(): ?string;
+    public function validateValue($value = null): ?string;
 }
