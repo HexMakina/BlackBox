@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\ORM;
 
-use HexMakina\BlackBox\Database\{TableInterface, SelectInterface};
+use HexMakina\BlackBox\Database\QueryInterface;
 
 interface ModelInterface
 {
@@ -36,5 +36,5 @@ interface ModelInterface
 
     public static function model_type(): string;
 
-    public static function filter($filters = [], $options = []): SelectInterface;
+    public static function filter($filters = [], $options = []): QueryInterface;
 }

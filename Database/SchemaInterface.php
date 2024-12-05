@@ -172,14 +172,14 @@ interface SchemaInterface
      * @return QueryInterface The delete query.
      */
     public function delete(string $table, array $conditions): QueryInterface;
-    
+
     /**
      * Creates a select query for the specified table with the given columns and table alias.
      *
      * @param string $table The name of the table.
      * @param array|null $columns The columns to select.
      * @param string|null $table_alias The alias for the table.
-     * @return SelectInterface The select query.
+     * @return QueryInterface The select query.
      */
     public function select(string $table, array $columns = null, string $table_alias = null): QueryInterface;
 }
