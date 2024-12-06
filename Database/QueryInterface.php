@@ -9,8 +9,6 @@
  */
 namespace HexMakina\BlackBox\Database;
 
-use HexMakina\Crudites\Grammar\Clause\Clause;
-
 interface QueryInterface
 {
     /**
@@ -32,25 +30,25 @@ interface QueryInterface
      * Returns the clause of the specified type.
      *
      * @param string $clause The type of clause to retrieve.
-     * @return mixed The clause of the specified type.
+     * @return ClauseInterface|null The clause or null if the clause does not exist.
      */
-    public function clause(string $clause): ?Clause;
+    public function clause(string $clause): ?ClauseInterface;
 
     /**
      * Adds a clause to the query.
      *
-     * @param Clause $clause The clause to add.
+     * @param ClauseInterface $clause The clause to add.
      * @return self The current instance for method chaining.
      */
-    public function add(Clause $clause): self;
+    public function add(ClauseInterface $clause): self;
 
     /**
      * Sets a clause to the query, all previous clauses of the same type are removed.
      *
-     * @param Clause $clause The clause to set.
+     * @param ClauseInterface $clause The clause to set.
      * @return self The current instance for method chaining.
      */
-    public function set(Clause $clause): self;
+    public function set(ClauseInterface $clause): self;
     /**
      * Returns the name of the base table.
      *
