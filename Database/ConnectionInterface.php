@@ -8,6 +8,7 @@ interface ConnectionInterface
 
     public function database(): string;
     public function schema(): SchemaInterface;
+    public function result($statement, $bindings = []): ResultInterface;
 
     public function lastInsertId($name = null);
 
