@@ -6,10 +6,6 @@ interface RowInterface
 {
     public function table(): string;
 
-    public function lastQuery(): ?QueryInterface;
-
-    public function lastAlterQuery(): ?QueryInterface;
-
     public function isNew(): bool;
 
     public function isAltered(): bool;
