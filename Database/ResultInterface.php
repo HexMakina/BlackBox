@@ -43,7 +43,5 @@ interface ResultInterface
      * @return int, -1 if the statement has not been executed
      */
     public function count(): int;
-
-    public function lastInsertId($name = null);
     public function errorInfo(): array;
 }
