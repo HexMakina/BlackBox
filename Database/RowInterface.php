@@ -4,6 +4,10 @@ namespace HexMakina\BlackBox\Database;
 
 interface RowInterface
 {
+    public function get(string $field);
+
+    public function set(string $name, $value = null);
+
     public function table(): string;
 
     public function isNew(): bool;
@@ -14,17 +18,17 @@ interface RowInterface
 
 
     /**
-     * loads row content from database,
+     * loads row content from database if the associative data $dat_ass 
+     * contains unique data matches (primary keys & unique constraints)
      *
-     * looks for primary key matching data in $dat_ass and sets the $load variable
+     * if $dat_ass matches, it queries the dabase and sets the $load property
      * $load stays null if
      * 1. not match is found in $dat_ass
-     * 2. multiple records are returned
-     * 3. no record is found
+     * 2. multiple or no records are returned
      *
-     * @param  array<int|string,mixed> $dat_ass an associative array containing primary key data matches
+     * @param  array<int|string,mixed> $dat_ass an associative array 
      */
-    public function load(array $dat_ass): Rowinterface;
+    public function load(array $dat_ass): ?Rowinterface;
 
 
     /**
