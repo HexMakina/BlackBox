@@ -22,6 +22,20 @@ interface ClauseInterface
     public const DELETE = 'DELETE FROM';
     
     public function __toString(): string;
-    public function bindings(): array;
+
+    /**
+     * @return string The name of the clause, from the constants defined in this interface.
+     */
     public function name(): string;
+
+    /**
+     * @return array<string,mixed> The values to bind to the statement.
+     */
+    public function bindings(): array;
+
+    /**
+     * @param mixed $something The value/predicate/string to add to the clause.
+     * @return ClauseInterface $this
+     */
+    public function add($something): ClauseInterface;
 }
