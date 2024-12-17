@@ -15,11 +15,6 @@ interface ConnectionInterface
      * @return SchemaInterface The schema of the database.
      */
     public function schema(): SchemaInterface;
-    
-    /**
-     * @return The query builder.
-     */
-    public function crud();
 
     /**
      * @param mixed $statement The SQL statement to execute.
