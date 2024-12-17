@@ -37,5 +37,9 @@ interface ClauseInterface
      * @param mixed $something The value/predicate/string to add to the clause.
      * @return ClauseInterface $this
      */
-    public function add($something): ClauseInterface;
+    /**
+     * @param mixed ...$arguments The values/predicates/strings to add to the clause.
+     * @return ClauseInterface $this
+     */
+    public function add(...$arguments): ClauseInterface;
 }
