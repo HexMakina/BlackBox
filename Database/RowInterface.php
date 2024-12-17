@@ -4,15 +4,21 @@ namespace HexMakina\BlackBox\Database;
 
 interface RowInterface
 {
-    public function get(string $field);
-
-    public function set(string $name, $value = null);
-
     public function table(): string;
 
     public function isNew(): bool;
 
     public function isAltered(): bool;
+
+
+    /**
+     * records changes vis-à-vis loaded data
+     *
+     * loops through the $dat_ass params
+     *
+     * @param  array<int|string,mixed> $dat_ass an associative array containing the new data
+     */
+    public function import(array $dat_ass): Rowinterface;
 
     public function export(): array;
 
@@ -28,19 +34,8 @@ interface RowInterface
      *
      * @param  array<int|string,mixed> $dat_ass an associative array 
      */
-    public function load(array $dat_ass): ?Rowinterface;
-
-
-    /**
-     * records changes vis-à-vis loaded data
-     *
-     * loops through the $dat_ass params
-     *
-     * @param  array<int|string,mixed> $dat_ass an associative array containing the new data
-     */
-    public function alter(array $dat_ass): Rowinterface;
-
-    public function persist(): array;
+    public function load(?array $dat_ass): Rowinterface;
+    public function save(): array;
     public function wipe(): bool;
 
     //------------------------------------------------------------  type:data validation
