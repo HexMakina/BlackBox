@@ -6,21 +6,22 @@ interface ConnectionInterface
 {
     public function __construct(string $dsn, string $username = '', string $password = '', array $driver_options = []);
 
-    public function driverName();
-    public function databaseName(): string;
-    public function useDatabase(string $name): void;
-    public function restoreDatabase(): void;
+    /**
+     * @return string The name of the database.
+     */
+    public function database(): string;
 
-    public function errorInfo(): ?array;
-    public function errorCode(): ?string;
+    /**
+     * @return SchemaInterface The schema of the database.
+     */
+    public function schema(): SchemaInterface;
 
-    public function prepare(string $sql_statement, $options = []): ?\PDOStatement;
-    public function query(string $sql_statement, $fetch_mode = null, $fetch_col_num = null): ?\PDOStatement;
-    public function alter(string $sql_statement): ?int;
+    /**
+     * @param mixed $statement The SQL statement to execute.
+     * @param array $bindings The values to bind to the statement.
+     * @return ResultInterface The result of the query.
+     */
+    public function result($statement, $bindings = []): ResultInterface;
 
-    public function lastInsertId($name = null);
-
-    public function transact(): bool;
-    public function commit(): bool;
-    public function rollback(): bool;
+    public function pdo(): \PDO;
 }

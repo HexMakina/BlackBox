@@ -1,42 +1,92 @@
-<?php
+<?php 
 
+/**
+ * Interface QueryInterface
+ *
+ * Provides an interface for building and managing SQL queries.
+ *
+ * @package HexMakina\BlackBox\Database
+ */
 namespace HexMakina\BlackBox\Database;
 
 interface QueryInterface
 {
+    /**
+     * Returns the generated SQL statement
+     *
+     * @return string The SQL statement.
+     */
     public function statement(): string;
 
-    public function connection(ConnectionInterface $setter = null): ConnectionInterface;
+    /**
+     * Optional bindings for the query.
+     * 
+     * @return array An associative array of bind labels and bind values.
+     * @return array An empty array if no bindings are set.
+     */
+    public function bindings(): array;
 
-    public function table(): TableInterface;
-    public function tableAlias($setter = null): string;
+    /**
+     * Returns the clause of the specified type.
+     *
+     * @param string $clause The type of clause to retrieve.
+     * @return ClauseInterface|null The clause or null if the clause does not exist.
+     */
+    public function clause(string $clause): ?ClauseInterface;
 
-    public function isExecuted(): bool;
-    public function isSuccess(): bool;
+    /**
+     * Adds a clause to the query.
+     *
+     * @param ClauseInterface $clause The clause to add.
+     * @return self The current instance for method chaining.
+     */
+    public function add(ClauseInterface $clause): self;
 
-    public function setBindings($dat_ass);
+    /**
+     * Sets a clause to the query, all previous clauses of the same type are removed.
+     *
+     * @param ClauseInterface $clause The clause to set.
+     * @return self The current instance for method chaining.
+     */
+    public function set(ClauseInterface $clause): self;
+    /**
+     * Returns the name of the base table.
+     *
+     * @return string The table name.
+     */
+    public function table(): string;
 
-    // returns assoc bind_label => bind_value
-    public function getBindings(): array;
+    /**
+     * Returns the alias of the base table, if any.
+     *
+     * @return string|null The table alias or null if no alias is set.
+     */
+    public function alias(): ?string;
 
-    // return an assoc [column_name => bind_label]
-    public function getBindingNames(): array;
+    /**
+     * Use base() when you need to address the base table, 
+     * but don't know if an alias has already been set.
+     * 
+     * @return string the base table's alias or name if no alias is set.
+     */
+    public function base(): string;
 
-    // // returns an assoc of [field => binding name] of newly addded bindings
-    // public function addBindings($assoc_data): array;
+    /**
+     * Returns an associative array of column names and their corresponding bind labels.
+     *
+     * @return array An associative array of [column_name => bind_label].
+     */
+    public function addBindings($assoc_data): array;
 
-    // return the binding name computed or given for the field
-    public function addBinding($field, $value, $table_name = null, $bind_label = null): string;
+    /**
+     * Adds a binding for a field and returns the binding name.
+     *
+     * @param string $field The field name.
+     * @param mixed $value The value to bind.
+     * @param string $table_name The name of the table.
+     * @param string|null $bind_label The binding label (optional).
+     * @return string The binding name.
+     */
+    public function addBinding($field, $value, $table_name, $bind_label = null): string;
 
-    public function bindLabel($field, $table_name = null): string;
-
-    public function backTick($string, $table_name = null): string;
-
-    // public function join()
-    public function joinedTables(): array;
-
-    public function run(): QueryInterface;
-
-
-    public function errorInfo(): array;
 }

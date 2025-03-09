@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\ORM;
 
-use HexMakina\BlackBox\Database\{TableInterface, SelectInterface};
+use HexMakina\BlackBox\Database\QueryInterface;
 
 interface ModelInterface
 {
@@ -12,6 +12,7 @@ interface ModelInterface
 
     public function isNew(): bool;
 
+    public function id();
     public function getId($mode = null);
 
     public function get($prop_name);
@@ -30,11 +31,10 @@ interface ModelInterface
     public function destroy($operator_id): bool;
     public function after_destroy();
 
-    public static function table(): TableInterface;
-    public static function relationalMappingName(): string;
+    public static function table(): string;
     public static function tableAlias(): string;
 
     public static function model_type(): string;
 
-    public static function filter($filters = [], $options = []): SelectInterface;
+    public static function filter($filters = [], $options = []): QueryInterface;
 }

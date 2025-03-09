@@ -9,7 +9,7 @@ interface TracerInterface
     public const CODE_UPDATE = 'U';
     public const CODE_DELETE = 'D';
 
-    public function tracingTable(): TableInterface;
+    public function tracingTable(): string;
 
     public function trace(TraceInterface $trace): bool;
 

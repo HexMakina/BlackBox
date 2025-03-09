@@ -4,31 +4,11 @@ namespace HexMakina\BlackBox\Database;
 
 interface RowInterface
 {
-    public function table(): TableInterface;
-
-    public function lastQuery(): ?QueryInterface;
-
-    public function lastAlterQuery(): ?QueryInterface;
+    public function table(): string;
 
     public function isNew(): bool;
 
     public function isAltered(): bool;
-
-    public function export(): array;
-
-
-    /**
-     * loads row content from database,
-     *
-     * looks for primary key matching data in $dat_ass and sets the $load variable
-     * $load stays null if
-     * 1. not match is found in $dat_ass
-     * 2. multiple records are returned
-     * 3. no record is found
-     *
-     * @param  array<int|string,mixed> $dat_ass an associative array containing primary key data matches
-     */
-    public function load(array $dat_ass): Rowinterface;
 
 
     /**
@@ -38,9 +18,24 @@ interface RowInterface
      *
      * @param  array<int|string,mixed> $dat_ass an associative array containing the new data
      */
-    public function alter(array $dat_ass): Rowinterface;
+    public function import(array $dat_ass): Rowinterface;
 
-    public function persist(): array;
+    public function export(): array;
+
+
+    /**
+     * loads row content from database if the associative data $dat_ass 
+     * contains unique data matches (primary keys & unique constraints)
+     *
+     * if $dat_ass matches, it queries the dabase and sets the $load property
+     * $load stays null if
+     * 1. not match is found in $dat_ass
+     * 2. multiple or no records are returned
+     *
+     * @param  array<int|string,mixed> $dat_ass an associative array 
+     */
+    public function load(?array $dat_ass): Rowinterface;
+    public function save(): array;
     public function wipe(): bool;
 
     //------------------------------------------------------------  type:data validation
