@@ -2,7 +2,7 @@
 
 namespace HexMakina\BlackBox\Database;
 
-interface SelectInterface extends PreparedQueryInterface
+interface SelectInterface extends QueryInterface
 {
     public function tableLabel($forced_value = null);
 
