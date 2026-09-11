@@ -14,10 +14,15 @@ interface BaseControllerInterface
     // public function container(): ContainerInterface;
     // public function set_container(ContainerInterface $container);
 
-    public function prepare();
+    
+    public function prepare(): void;
+    
     public function execute($method);
-    public function conclude();
-
+    
+    public function conclude() : void;
+    
+    public function headers(): void;
+    
     public function errors(): array;
     public function addError($message, $context = []);
 

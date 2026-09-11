@@ -31,6 +31,11 @@ interface RouterInterface
     // hops back to previous page (referer()), or home if no referer
     public function hopBack();
 
+    // returns full refering URL
+    // returns null if same as current URL (prevents endless redirection loop)
+    public function referer(): ?string;
+
+
     // access POST data
     public function submitted($param_name = null);
 

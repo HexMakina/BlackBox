@@ -11,8 +11,8 @@ interface ConnectionInterface
     public function useDatabase(string $name): void;
     public function restoreDatabase(): void;
 
+    public function errorInfo(): ?array;
     public function errorCode(): ?string;
-    public function errorInfo(): array;
 
     public function prepare(string $sql_statement, $options = []): ?\PDOStatement;
     public function query(string $sql_statement, $fetch_mode = null, $fetch_col_num = null): ?\PDOStatement;

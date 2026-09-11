@@ -8,5 +8,10 @@ interface DatabaseInterface
 
     public function name();
 
+    public function table(string $table_name): TableInterface;
+
+    //legacy
     public function inspect(string $table_name): TableInterface;
+
+    public function schema(): SchemaInterface;
 }

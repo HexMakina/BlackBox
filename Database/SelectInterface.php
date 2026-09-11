@@ -7,14 +7,14 @@ interface SelectInterface extends QueryInterface
     public function tableLabel($forced_value = null);
 
     public function columns($setter = null);
-    public function selectAlso($setter);
+    public function selectAlso(array $setter);
 
     public function join($table_names, $joins, $join_type = '');
     public function groupBy($clause);
     public function having($condition);
     public function orderBy($clause);
     public function limit($number, $offset = null);
-    public function addTables($setter);
+    public function addJoinedTable($name, $alias);
 
     public function retObj($c = null);
     public function retNum();
@@ -24,6 +24,8 @@ interface SelectInterface extends QueryInterface
     public function retKey();
 
     public function where($where_condition);
+    public function whereWithBind($where);
+    public function whereBindField($table, $field, $operator, $value);
 
     public function wherePrimary($pk_values);
 

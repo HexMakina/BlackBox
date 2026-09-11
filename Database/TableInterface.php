@@ -22,7 +22,7 @@ interface TableInterface extends TableMetaInterface
     public function insert(array $dat_ass): QueryInterface;
 
     /** @param array<string,string> $columns */
-    public function select(array $columns = null, string $table_alias = null): SelectInterface;
+    public function select(?array $columns = null, ?string $table_alias = null): SelectInterface;
 
     /** @param array<mixed,mixed> $modifications
       * @param array<mixed,mixed> $conditions

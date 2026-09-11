@@ -4,16 +4,14 @@ namespace HexMakina\BlackBox\Database;
 
 interface QueryInterface
 {
-    public function statement($setter = null): string;
+    public function statement(): string;
 
-    public function connection(ConnectionInterface $setter = null): ConnectionInterface;
+    public function connection(?ConnectionInterface $setter = null): ConnectionInterface;
 
     public function table(): TableInterface;
-    public function tableName(): string;
     public function tableAlias($setter = null): string;
 
-    public function isPrepared();
-    public function isExecuted($setter = null): bool;
+    public function isExecuted(): bool;
     public function isSuccess(): bool;
 
     public function setBindings($dat_ass);
@@ -24,8 +22,8 @@ interface QueryInterface
     // return an assoc [column_name => bind_label]
     public function getBindingNames(): array;
 
-    // returns an assoc of [field => binding name] of newly addded bindings
-    public function addBindings($assoc_data): array;
+    // // returns an assoc of [field => binding name] of newly addded bindings
+    // public function addBindings($assoc_data): array;
 
     // return the binding name computed or given for the field
     public function addBinding($field, $value, $table_name = null, $bind_label = null): string;
@@ -38,4 +36,7 @@ interface QueryInterface
     public function joinedTables(): array;
 
     public function run(): QueryInterface;
+
+
+    public function errorInfo(): array;
 }
